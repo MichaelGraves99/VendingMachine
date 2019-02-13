@@ -22,33 +22,26 @@ function drawButtons(b) {
   let itemPrice = vs.GetItemPrice
   let itemPic = vs.GetItemPic
   for (let a = 0; a < 3; a++) {
-    template += `<button type="button" id="${item[a]}" class="btn btn-lg btn-success mx-2" onclick = "app.controllers.vendrController.vendItem(${a})">${item[a]}</button>`
+    template += `<button type="button" id="${item[a]}" class="btn btn-lg btn-success mx-2 px-5" onclick = "app.controllers.vendrController.vendItem(${a})">${item[a]}</button>`
     picts += `<img class="mx-2" src="${itemPic[a]}" alt="">`
     prices += `<h2>$${itemPrice[a]}</h2>`
-    console.log(item[a])
-    console.log(itemPrice[a])
-    console.log(itemPic[a])
   }
   document.getElementById('itemButton').innerHTML = template;
   document.getElementById('itemPrice').innerHTML = prices;
   document.getElementById('itemPic').innerHTML = picts;
 
-  // for (let a = 0; a < 3; a++) {
-  //   console.log(b)
-  //   console.log(72)
-  //   if (b < itemPrice[a]) {
-  //     document.getElementById("button").disabled = true
-  //   } else {
-  //     document.getElementById("button").disabled = false
-  //   }
-  // }
+  for (let a = 0; a < 3; a++) {
+    if (b < itemPrice[a]) {
+      document.getElementById(`${item[a]}`).disabled = true
+    } else {
+      document.getElementById(`${item[a]}`).disabled = false
+    }
+  }
 }
 
 export default class VendrController {
 
   constructor() {
-    //8
-    console.log('Building Controller')
     draw()
   }
   vendItem(pNum) {
@@ -56,7 +49,6 @@ export default class VendrController {
     draw()
   }
   addQuarter() {
-    console.log(2)
     vs.addQuarter()
     draw()
   }

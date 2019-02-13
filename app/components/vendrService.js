@@ -12,7 +12,6 @@ export default class VendrService {
   constructor() {
   }
   get Balance() {
-    console.log('balance')
     return vm.balance
   }
   get GetItemPosition() {
@@ -37,13 +36,10 @@ export default class VendrService {
     for (let i = 0; i < 3; i++) {
       _itemPic[i] = vm.snacks[_itemPosition[i]].pict
       _itemPrice[i] = vm.snacks[_itemPosition[i]].price
-      console.log(_itemPic)
-      console.log(_itemPrice)
     }
   }
 
   addQuarter() {
-    console.log(2)
     vm.balance += .25
   }
 
