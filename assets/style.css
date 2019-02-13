@@ -1,0 +1,25 @@
+.fa{
+  font-family: 'Permanent Marker', cursive;
+}
+.fb{
+  font-family: 'Fredoka One', cursive;
+}
+
+.head-text{
+  background-color: lightcyan;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.cen{
+  display: flex;
+  justify-content: center;
+}
+
+
+.r1{
+  background-color: lightcyan;
+}
+.r2{
+  background-color: gainsboro;
+}

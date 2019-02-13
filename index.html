@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Permanent+Marker" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/style.css">
+  <title>Document</title>
+</head>
+
+<body class="container">
+  <header class="row">
+    <div class="col-12 cen head-text">
+      <h1 class="head-text fa">Vending Machine</h1>
+    </div>
+  </header>
+  <section class="row">
+    <div class="col-12 cen">
+      <button type="button" class="btn btn-lg btn-success mx-2" onclick="app.controllers.vendrController.vendItem()">A1</button>
+      <button type="button" class="btn btn-lg btn-success mx-2" onclick="app.controllers.vendrController.vendItem()">A2</button>
+      <button type="button" class="btn btn-lg btn-success mx-2" onclick="app.controllers.vendrController.vendItem()">A3</button>
+
+    </div>
+  </section>
+  <section class="row">
+    <div class="col-12 cen">
+      <h1 id="message" class="cen fb">Press Button For Item</h1>
+    </div>
+  </section>
+  <section class="row">
+    <div class="col-12 cen">
+      <h1>Balance $<span id="bal">_</span></h1>
+    </div>
+  </section>
+  <section class="row">
+    <div class="col-12 cen">
+      <button type="button" class="btn btn-lg btn-primary mx-2" onclick="app.controllers.vendrController.addQuarter()">Quarter</button>
+      <button type="button" class="btn btn-lg btn-primary mx-2" onclick="app.controllers.vendrController.addDollar()">Doller</button>
+    </div>
+  </section>
+
+
+
+
+  <script type="module" src="app/main.js"></script>
+</body>
+
+</html>
