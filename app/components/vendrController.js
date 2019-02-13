@@ -2,31 +2,36 @@
 import VendrService from "./vendrService.js"
 
 let vs = new VendrService()
+vs.passItemPosition()
+drawButtons()
 
 
 function draw() {
-  console.log(4)
+
   let b = vs.Balance
-  let m = vs.Message
+
 
   document.getElementById('bal').innerText = b.toFixed(2)
-  document.getElementById('message').innerText = m
-  console.log(m)
+  //document.getElementById('message').innerText = m
+
 }
 
 function drawButtons() {
   let template = "";
-  let item = vs.getItem()
+  let item = vs.GetItemPosition
   for (let a = 0; a < 3; a++) {
-    template += `<button type="button" class="btn btn-lg btn-danger mx-2" onclick="action(vendItem${[a + 1]})">${item[a]}</button>`
+    template += `<button type="button" class="btn btn-lg btn-primary mx-2" onclick = "app.controllers.vendrController.vendItem(${a})">${item[a]}</button>`
+    console.log(item[a])
   }
-  document.getElementById('attackButtons').innerHTML = template;
-
+  document.getElementById('itemButton').innerHTML = template;
 }
 
-let attacks = (Object.keys(ryu.attacks));
+function drawPics() {
+}
 
-//Public
+//let attacks = (Object.keys(ryu.attacks));
+//onclick = "app.controllers.vendrController.vendItem(0)" > A1</button >
+//Public ${[a]}
 
 export default class VendrController {
 
@@ -35,9 +40,8 @@ export default class VendrController {
     console.log('Building Controller')
     draw()
   }
-  vendItem() {
-    console.log(1)
-    vs.vendItem()
+  vendItem(pNum) {
+    vs.vendItem(pNum)
     draw()
   }
   addQuarter() {
@@ -49,10 +53,8 @@ export default class VendrController {
     vs.addDollar()
     draw()
   }
-
-
-
-
-
+  itemInfo() {
+    vs.itemInfo()
+  }
 
 }

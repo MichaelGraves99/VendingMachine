@@ -1,10 +1,10 @@
 //Private
 import VendrMachine from '../models/vendrMachine.js'
 
+let vm = new VendrMachine()
+let _itemPosition = []
 
 //Public
-let vm = new VendrMachine()
-
 export default class VendrService {
 
   constructor() {
@@ -17,18 +17,21 @@ export default class VendrService {
     console.log('message')
     return vm.message
   }
-
-  vendItem() {
-    if (vm.snack.a1.price > vm.balance) {
-      vm.message = "Add More Cash"
-    }
+  get GetItemPosition() {
+    return _itemPosition
+  }
+  passItemPosition() {
+    _itemPosition = vm.position
+    console.log(vm.snacks.A1.price)
   }
 
-  getItem() {
-    for (let i = 0; i < 3; i++)
-      vm.snack.a1.name
+  vendItem(pNum) {
 
-    return arr
+    vm.balance -= vm.snacks[_itemPosition[pNum]].price
+  }
+
+  itemInfo() {
+
   }
 
   addQuarter() {
@@ -39,4 +42,6 @@ export default class VendrService {
   addDollar() {
     vm.balance += 1.00
   }
+
 }
+

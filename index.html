@@ -19,13 +19,32 @@
     </div>
   </header>
   <section class="row">
-    <div class="col-12 cen">
-      <button type="button" class="btn btn-lg btn-success mx-2" onclick="app.controllers.vendrController.vendItem()">A1</button>
-      <button type="button" class="btn btn-lg btn-success mx-2" onclick="app.controllers.vendrController.vendItem()">A2</button>
-      <button type="button" class="btn btn-lg btn-success mx-2" onclick="app.controllers.vendrController.vendItem()">A3</button>
-
+    <div class="col cen">
+      <img class="mx-2" src="assets/snickers.jpg" id="a1pic" alt="Snickers">
+      <img class="mx-2" src="assets/twix.jpg" id="a2pic" alt="Twix">
+      <img class="mx-2" src="assets/Ruffles.jpg" id="a3pic" alt="Ruffles">
     </div>
   </section>
+
+  <section class="row">
+    <div class="col cen1">
+      <h2 id="a1price">Price</h2>
+      <h2 id="a2price">Price</h2>
+      <h2 id="a3price">Price</h2>
+    </div>
+  </section>
+
+  <section class="row">
+    <div class="col cen1">
+      <button type="button" class="btn btn-lg btn-success mx-2" onclick="app.controllers.vendrController.vendItem(0)">A1</button>
+      <button type="button" class="btn btn-lg btn-success mx-2" onclick="app.controllers.vendrController.vendItem(1)">A2</button>
+      <button type="button" class="btn btn-lg btn-success mx-2" onclick="app.controllers.vendrController.vendItem(2)">A3</button>
+    </div>
+  </section>
+  <section class="row">
+    <div class="col cen1" id="itemButton"></div>
+  </section>
+
   <section class="row">
     <div class="col-12 cen">
       <h1 id="message" class="cen fb">Press Button For Item</h1>
